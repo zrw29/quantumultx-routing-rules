@@ -23,9 +23,9 @@ English summary: A Quantumult X routing configuration for iOS and macOS. It prov
 | --- | --- |
 | 通用代理 | 可选择全部代理节点；作为未命中流量的默认出口。 |
 | 日本节点、新加坡节点、美国节点、台湾节点、香港节点 | 根据节点名称中的地区关键词和旗帜筛出相应节点，供手动选择。 |
-| ChatGPT | 在日本节点和新加坡节点之间手动选择。ChatGPT/OpenAI 域名规则指向此组。 |
-| Netflix-HK | 使用香港节点；Netflix 域名规则指向此组。 |
-| YouTube、Telegram、Google、Microsoft、X、Spotify | 每组列出全部代理节点，使用者分别手动选择出口。美国和台湾地区组不会自动改变这些服务组的选择。 |
+| ChatGPT | 可选择日本、新加坡或通用代理。ChatGPT/OpenAI 域名规则指向此组。 |
+| Netflix-HK | 可选择香港节点或通用代理；Netflix 域名规则指向此组。 |
+| YouTube、Telegram、Google、Microsoft、X、Spotify | 每组都可选择通用代理或任一代理节点。选择通用代理后，可在通用代理组集中切换实际节点。 |
 | Apple | 默认选择 direct，也可手动切换到通用代理。Apple 域名规则和 Apple 远程规则指向此组。 |
 
 节点地区组依赖订阅中的节点标签。若服务商使用的名称未包含配置正则中的地区词，需调整 QuantumultX.conf 中相应的 server-tag-regex。
@@ -35,6 +35,7 @@ English summary: A Quantumult X routing configuration for iOS and macOS. It prov
 ## 分流逻辑
 
 - localhost、局域网和本机地址按本地规则直连。
+- 理想汽车的 lixiang.app 和 lixiang.com 由本地规则明确指定为 direct。
 - Apple、ChatGPT/OpenAI、Netflix 和 X 的关键域名由 QuantumultX.conf 中的本地规则分配到对应策略组。
 - Apple、Google、Microsoft、YouTube、Twitter/X、Telegram、Spotify 和中国大陆规则通过远程规则列表加载，并在配置中指定目标策略组。
 - 中国大陆规则列表命中的流量走 direct。该规则库包含域名、IP、IPv6 和 User-Agent 规则；配置没有使用 GEOIP,CN。
