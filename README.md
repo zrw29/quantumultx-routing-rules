@@ -4,6 +4,12 @@
 
 English summary: A Quantumult X routing configuration for iOS and macOS. It provides policy groups, rule references, and icons. It does not include proxy nodes or subscription credentials.
 
+## 项目性质与免责声明
+
+本项目主要供作者个人自用，并分享配置思路，不构成适用于所有人的通用方案。规则和策略组按作者的个人需求维护，可能调整、停止更新或失效。
+
+如需使用，请自行了解并按自己的设备、Quantumult X 版本、网络环境和节点订阅进行配置、检查与排错。作者不保证规则的准确性、完整性、稳定性或持续可用性，也不保证适配所有环境；本项目不承诺答疑或技术支持。使用前请自行评估并承担相应风险。
+
 ## 快速开始
 
 配置订阅直链：
