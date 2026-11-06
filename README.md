@@ -24,4 +24,4 @@ QX 配置订阅直链：
 
 ## 策略组图标
 
-策略组通过 img-url 参数引用 [Oasisic-Icons](https://github.com/Hawaiine/Oasisic-Icons) 的远程 PNG 图标（MIT）；ChatGPT 组使用 OpenAI 图标。图标由上游托管，本配置仅引用图标链接。
+图标源自 [Oasisic-Icons](https://github.com/Hawaiine/Oasisic-Icons)，已缩至 144×144 PNG 并托管在本仓库的 icons/qx/144 目录；上游 MIT 许可副本位于 icons/qx/Oasisic-LICENSE.txt。ChatGPT 组使用 OpenAI 图标。若 QX 仍显示默认图标，请清除图片缓存并完全退出、重启应用。
