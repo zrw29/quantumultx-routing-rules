@@ -23,9 +23,9 @@ English summary: A Quantumult X routing configuration for iOS and macOS. It prov
 | --- | --- |
 | 通用代理 | 可选择全部代理节点；作为未命中流量的默认出口。 |
 | 日本节点、新加坡节点、美国节点、台湾节点、香港节点 | 根据节点名称中的地区关键词和旗帜筛出相应节点，供手动选择。 |
-| ChatGPT | 可选择日本、新加坡或通用代理。ChatGPT/OpenAI 域名规则指向此组。 |
-| Netflix-HK | 可选择香港节点或通用代理；Netflix 域名规则指向此组。 |
-| YouTube、Telegram、Google、Microsoft、X、Spotify | 每组都可选择通用代理或任一代理节点。选择通用代理后，可在通用代理组集中切换实际节点。 |
+| ChatGPT | 可选择日本、新加坡、通用代理或 direct。ChatGPT/OpenAI 域名规则指向此组。 |
+| Netflix-HK | 可选择香港节点、通用代理或 direct；Netflix 域名规则指向此组。 |
+| YouTube、Telegram、Google、Microsoft、X、Spotify | 每组都可选择 direct、通用代理或任一代理节点。选择通用代理后，可在通用代理组集中切换实际节点。 |
 | Apple | 默认选择 direct，也可手动切换到通用代理。Apple 域名规则和 Apple 远程规则指向此组。 |
 
 节点地区组依赖订阅中的节点标签。若服务商使用的名称未包含配置正则中的地区词，需调整 QuantumultX.conf 中相应的 server-tag-regex。
