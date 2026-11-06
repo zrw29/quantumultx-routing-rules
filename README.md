@@ -1,0 +1,1 @@
+# quantumultx-routing-rules
