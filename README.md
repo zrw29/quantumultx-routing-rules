@@ -35,14 +35,17 @@ English summary: A Quantumult X routing configuration for iOS and macOS. It prov
 ## 分流逻辑
 
 - localhost、局域网和本机地址按本地规则直连。
-- 理想汽车的 lixiang.app 和 lixiang.com 由本地规则明确指定为 direct。
+- 中国大陆常用服务通过 Blackmatrix7 China.list 远程规则直连；截至 2026-11-06 的覆盖核对，本地额外补充该列表未明确覆盖的 `lixiang.com`（理想汽车）、`xhslink.com`（小红书分享短链）、`ke.com`（贝壳找房）、`honor.com`（荣耀新官网）和 `zto.com`（中通快递）。
 - Apple、ChatGPT/OpenAI、Netflix 和 X 的关键域名由 QuantumultX.conf 中的本地规则分配到对应策略组。
 - Apple、Google、Microsoft、YouTube、Twitter/X、Telegram、Spotify 和中国大陆规则通过远程规则列表加载，并在配置中指定目标策略组。
 - 中国大陆规则列表命中的流量走 direct。该规则库包含域名、IP、IPv6 和 User-Agent 规则；配置没有使用 GEOIP,CN。
+- `12306.cn`、`feishu.cn`、`vivo.com.cn`、`kuaidi100.com` 等高频服务已由上游 China.list 覆盖，因此没有在本地重复添加。
 - Netflix 使用域名规则，没有导入大范围共享云服务 IP 段。
 - 其余未命中规则的流量按 final 规则走通用代理。
 
 远程规则来自 [Blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)，链接和 force-policy 映射以 QuantumultX.conf 为准。远程列表由上游维护，规则内容可能随上游更新。
+
+本地中国大陆补充域名是对照上游列表时确认的缺项；上游会变化，维护时可重新核对以避免重复和遗漏。理想汽车仅将 `lixiang.com` 指定为直连。
 
 ChatGPT/OpenAI 的本地域名规则是按需维护的选定条目，不代表 OpenAI 的完整或永久域名清单。维护时请查阅 [OpenAI 官方网络建议](https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps)，并确认新域名确实需要纳入分流。
 
